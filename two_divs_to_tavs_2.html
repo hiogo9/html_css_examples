@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+
+        @media only screen and (max-width: 768px) {
+            .tab-panel {
+                /* apply these styles in mobile ony */
+                float: none;
+                display: none;
+            }
+
+
+
+
+            input[name="tabs"]:checked + label {
+                font-weight: bold;
+            }
+
+            input[id="tab1"]:checked ~ .tab-panel#col1 {
+                display: block;
+            }
+
+            input[id="tab2"]:checked ~ .tab-panel#col2 {
+                display: block;
+            }
+        }
+         input[name="tabs"] {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+
+<div class="dash">
+    <!-- Only display labels on mobile -->
+    <input type="radio" name="tabs" id="tab1" checked>
+    <label for="tab1" role="tab" aria-controls="col1">Col 1</label>
+    <input type="radio" name="tabs" id="tab2">
+    <label for="tab2" role="tab" aria-controls="col2">Col 2</label>
+
+    <section class="tab-panel dashboard-container-left" id="col1">
+        1111<br>
+        1111<br>
+        1111<br>
+    </section>
+    <section class="tab-panel dashboard-container-left" id="col2">
+        2222<br>
+        2222<br>
+        2222<br>
+    </section>
+</div>
+
+</body>
+</html>
