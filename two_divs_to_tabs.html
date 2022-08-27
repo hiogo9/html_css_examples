@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <style>
+        /* small device */
+        @media (max-width: 767px) {
+            .device-big {
+                display: none;
+            }
+
+            .device-small {
+                display: block;
+            }
+        }
+
+        /* big device */
+        @media only screen and (min-width: 768px) {
+            .tab-content > .tab-pane.device-big {
+                display: block;
+            }
+
+            .device-small {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs device-small" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#first" aria-controls="first" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation">
+            <a href="#second" aria-controls="second" role="tab" data-toggle="tab">Profile</a></li>
+
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active col col-xs-12 col-sm-4" id="first">...home...</div>
+        <div role="tabpanel" class="tab-pane col-xs-12 col-sm-4" id="second">...profile...</div>
+    </div>
+
+</div>
+
+
 </body>
 </html>
